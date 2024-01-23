@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home / {{frontend.WEBSITE_NAME}}</title>
+  <link rel="shortcut icon" type="image/png" href="{{frontend.PATH}}/icons/home.png" />
+  <link rel="stylesheet" href="{{frontend.PATH}}/css/login.min.css" />
+
+  {{ toastr.include_jquery() }}
+  {{ toastr.include_toastr_css() }}
+  {{ toastr.message() }}
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+     
+      <div class="d-flex align-items-center justify-content-center w-100">
+        <div class="row justify-content-center w-100">
+          <div class="col-md-8 col-lg-6 col-xxl-3">
+            <div class="card mb-0">
+                <div class="card-body">
+                    <a href="{{url_for('Index')}}" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                      <img src="{{frontend.PATH}}/images/logo-transparent.png" width="180" height="30" alt="">
+                    </a>
+                    <div>
+                      <a href="/LinkGoogle"><button type="button" id="linkGoogleAccount" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Link Google Account</button></a>
+                      <a href="/Sync"><button type="submit" id="proceed" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" style="background-color: green; opacity: 80%;">Manual Sync</button></a>
+                      <a target="_blank" href="https://www.notion.so/7adad7fdc1714bb4a8b054de85db7481?v=aa293e4a5df840d8943689731091db82&pvs=4"><button type="button" id="resetNotion" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" style="background-color: green; opacity: 80%;">View Database</button></a>
+                      <a  target="_blank" href="https://myaccount.google.com/connections?filters=2&sjid=11610225994356838553-EU"><button type="button" id="revokeGoogle" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" style="background-color: red; opacity: 80%;">Google Settings</button></a>
+                      <a href="/UnlinkGoogle"><button type="button" id="revokeGoogle" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" style="background-color: red; opacity: 80%;">Revoke Google Access</button></a>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ toastr.include_toastr_js() }}
+   </div>
+
+  <script src="{{frontend.PATH}}/jquery/dist/jquery.min.js"></script>
+  <script src="{{frontend.PATH}}/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
